@@ -33,6 +33,20 @@
           <div><%= full_date(page.updated, theme.post.copyright.update_date.format || 'LL') %></div>
         </div>
       <% } %>
+      <div class="license-meta-item">
+          <div><%- __('post.copyright.content_type') %></div>
+          <div>
+            <% if (page.aigc === true) { %>
+              <span class="hint--top hint--rounded" aria-label="<%- __('post.copyright.aigc_desc') %>">
+                <%- __('post.copyright.aigc') %>
+              </span>
+            <% } else { %>
+              <span class="hint--top hint--rounded" aria-label="<%- __('post.copyright.original_desc') %>">
+                <%- __('post.copyright.original') %>
+              </span>
+            <% } %>
+          </div>
+        </div>
       <% if (license) { %>
         <div class="license-meta-item">
           <div><%- __('post.copyright.licensed') %></div>
